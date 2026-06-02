@@ -11,6 +11,10 @@ let currentSlide = 0;
 let slides;
 let totalSlides;
 
+function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     slides = document.querySelectorAll('.slide');
     totalSlides = slides.length;
@@ -20,6 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     generateSidebar();
     showSlide(0);
+
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    if (prevBtn) prevBtn.addEventListener('click', previousSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    const toggle = document.getElementById('sidebar-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('sidebar-open');
+        });
+    }
 });
 
 /**
@@ -28,15 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function showSlide(n) {
     if (!slides || !slides.length) return;
+    if (n < 0 || n >= totalSlides) return;
 
     slides[currentSlide].classList.remove('active');
-    currentSlide = (n + totalSlides) % totalSlides;
+    currentSlide = n;
     slides[currentSlide].classList.add('active');
 
     const cur = document.getElementById('current-slide');
     if (cur) cur.textContent = currentSlide + 1;
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+    });
 
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
@@ -58,10 +78,7 @@ function previousSlide() {
  * מעבר לשקופית לפי מספר תצוגה (1-indexed)
  */
 function goToSlide(slideNumber) {
-    const slideIndex = slideNumber - 1;
-    if (slideIndex >= 0 && slideIndex < totalSlides) {
-        showSlide(slideIndex);
-    }
+    showSlide(slideNumber - 1);
 }
 
 /* ============================================================
@@ -83,7 +100,7 @@ function generateSidebar() {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = '#';
-        a.dataset.slide = String(index);
+        a.dataset.slide = String(index + 1);
         a.innerHTML =
             `<span class="sidebar-num">${index + 1}.</span>` +
             `<span class="sidebar-title">${title}</span>`;
@@ -91,7 +108,6 @@ function generateSidebar() {
         a.addEventListener('click', (e) => {
             e.preventDefault();
             showSlide(index);
-            // במובייל: לסגור את הסיידבר אחרי בחירה
             if (window.innerWidth <= 1024) {
                 document.body.classList.remove('sidebar-open');
             }
@@ -107,36 +123,34 @@ function updateSidebarHighlight() {
     links.forEach((a, idx) => {
         a.classList.toggle('active', idx === currentSlide);
     });
-    // גלילה כך שהפריט הפעיל ייראה
+
     const active = document.querySelector('.sidebar-list a.active');
     if (active) {
-        active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        active.scrollIntoView({
+            block: 'nearest',
+            behavior: prefersReducedMotion() ? 'auto' : 'smooth'
+        });
     }
 }
 
-/* ============================================================
-   פתיחה/סגירה של סיידבר במובייל
-   ============================================================ */
-document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('sidebar-toggle');
-    if (toggle) {
-        toggle.addEventListener('click', () => {
-            document.body.classList.toggle('sidebar-open');
-        });
+document.addEventListener('click', (e) => {
+    const slideLink = e.target.closest('.slide-link[data-slide]');
+    if (slideLink) {
+        e.preventDefault();
+        e.stopPropagation();
+        goToSlide(parseInt(slideLink.dataset.slide, 10));
+        return;
     }
 
-    // לחיצה על הרקע הכהה (overlay) — סוגרת
-    document.addEventListener('click', (e) => {
-        if (!document.body.classList.contains('sidebar-open')) return;
-        if (window.innerWidth > 1024) return;
+    if (!document.body.classList.contains('sidebar-open')) return;
+    if (window.innerWidth > 1024) return;
 
-        const sidebar = document.getElementById('slides-sidebar');
-        const toggleBtn = document.getElementById('sidebar-toggle');
-        if (sidebar && sidebar.contains(e.target)) return;
-        if (toggleBtn && toggleBtn.contains(e.target)) return;
+    const sidebar = document.getElementById('slides-sidebar');
+    const toggleBtn = document.getElementById('sidebar-toggle');
+    if (sidebar && sidebar.contains(e.target)) return;
+    if (toggleBtn && toggleBtn.contains(e.target)) return;
 
-        document.body.classList.remove('sidebar-open');
-    });
+    document.body.classList.remove('sidebar-open');
 });
 
 /* ============================================================
@@ -162,9 +176,7 @@ function handleSwipe() {
     const dx = touchEndX - touchStartX;
     const dy = Math.abs(touchEndY - touchStartY);
 
-    // דרישה: 80px אופקי + כיוון אופקי דומיננטי
     if (Math.abs(dx) > 80 && Math.abs(dx) > dy * 2) {
-        // RTL: סוויפ ימינה → קודם; שמאלה → הבא
         if (dx < 0) {
             previousSlide();
         } else {
@@ -177,9 +189,9 @@ function handleSwipe() {
    ניווט במקלדת
    ============================================================ */
 document.addEventListener('keydown', (e) => {
-    // לא להפריע למשתמש כשהוא מקליד בשדה טקסט
     const tag = (e.target.tagName || '').toLowerCase();
     if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    if (e.target.closest('.mode-toggle')) return;
 
     if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') nextSlide();
     else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') previousSlide();

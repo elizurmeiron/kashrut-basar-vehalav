@@ -206,6 +206,23 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .slide {
+        animation: none;
+    }
+
+    .slides-sidebar,
+    .sidebar-list a,
+    .nav-btn,
+    .mode-btn,
+    .theme-select,
+    .option,
+    .show-answer-btn,
+    .slide-link {
+        transition: none;
+    }
+}
+
 .slide h1 {
     color: var(--text-tertiary);
     text-align: center;
@@ -334,17 +351,4 @@ body.sidebar-open::before {
     body.sidebar-open::before {
         display: none;
     }
-}
-
-/* ============================================================
-   הסתרת אלמנטים ישנים שכבר לא דרושים
-   ============================================================ */
-.nav-arrow-prev,
-.nav-arrow-next {
-    display: none !important;
-}
-
-.slideshow-container::before,
-.slideshow-container::after {
-    display: none;
 }

@@ -257,127 +257,42 @@
     font-weight: bold;
 }
 
-/* Flowchart Components */
-.flowchart {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin: 20px 0;
+/* Navigation Links */
+.slide-ref {
+    margin-top: 0.75rem;
 }
 
-.step {
-    background: var(--question-bg);
-    border: 2px solid var(--primary-color);
-    border-radius: 15px;
-    padding: 15px 20px;
-    text-align: center;
-    min-width: 300px;
-    font-weight: bold;
-    position: relative;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.slide-link {
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    border-radius: 3px;
 }
 
-.start-step {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--text-white);
-    font-size: 1.2em;
+.slide-link:hover {
+    background-color: var(--link-hover-bg);
+    color: var(--primary-dark);
+    text-decoration-style: solid;
 }
 
-.question-step {
-    background: var(--step-question-bg);
-    border-color: var(--step-question-border);
-    color: var(--step-question-text);
-    font-size: 1.1em;
+.slide-ref .slide-link {
+    display: inline-block;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+    padding-bottom: 1px;
 }
 
-.success-step {
-    background: var(--step-success-bg);
-    border-color: var(--step-success-border);
-    color: var(--step-success-text);
+.slide-ref .slide-link:hover {
+    transform: translateX(-2px);
 }
 
-.step-retrospect {
-    background: var(--step-retrospect-bg);
-    border-color: var(--step-retrospect-border);
-    color: var(--step-retrospect-text);
-}
-
-.error-step {
-    background: var(--step-error-bg);
-    border-color: var(--step-error-border);
-    color: var(--step-error-text);
-}
-
-.vertical-arrow {
-    width: 4px;
-    height: 40px;
-    background: linear-gradient(to bottom, #4299e1, var(--primary-color));
-    position: relative;
-    margin: -10px 0;
-}
-
-.vertical-arrow::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 12px solid var(--primary-color);
-}
-
-.branch-container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    max-width: 800px;
-    gap: 100px;
-    margin: 20px 0;
-}
-
-.branch-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    position: relative;
-}
-
-.yes-label {
-    background: linear-gradient(135deg, var(--category-gradient-start), var(--option-correct-border));
-}
-
-.no-label {
-    background: linear-gradient(135deg, var(--category-error-start), var(--option-incorrect-border));
-}
-
-.connection-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.branch-label {
-    background: var(--link-color);
-    color: var(--text-white);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    box-shadow: var(--link-hover-shadow);
-    z-index: 15;
-    position: relative;
+.quote-text {
+    font-style: italic;
 }
 
 /* Quiz Components */
@@ -505,24 +420,4 @@
     color: var(--text-muted);
     font-style: italic;
     margin-top: 8px;
-}
-
-/* Navigation Links */
-.slide-link-span {
-    cursor: pointer;
-    transition: all 0.2s;
-    display: inline-block;
-    padding: 2px 4px;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    border-radius: 3px;
-}
-
-.slide-link-span:hover {
-    background-color: #e6f2ff;
-    color: var(--primary-dark);
-    text-decoration-style: solid;
-    transform: translateX(-2px);
 }

@@ -6,24 +6,32 @@
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    linkifyTocSlide();
+    initQuiz();
+});
+
+function linkifyTocSlide() {
     const tocSlide = document.querySelectorAll('.slide')[1];
     if (!tocSlide) return;
 
-    let html = tocSlide.innerHTML;
-    html = html.replace(/\(שקף (\d+)\)/g, (match, slideNum) =>
-        `<span class="slide-link-span" data-slide="${slideNum}">${match}</span>`
-    );
-    tocSlide.innerHTML = html;
+    tocSlide.querySelectorAll('.list-item').forEach(item => {
+        const text = item.textContent;
+        const match = text.match(/^(.*?)\(שקף (\d+)\)\s*$/);
+        if (!match) return;
 
-    tocSlide.querySelectorAll('.slide-link-span').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.stopPropagation();
-            goToSlide(parseInt(link.getAttribute('data-slide'), 10));
-        });
+        item.textContent = '';
+        if (match[1]) {
+            item.appendChild(document.createTextNode(match[1]));
+        }
+
+        const link = document.createElement('a');
+        link.className = 'slide-link';
+        link.href = '#';
+        link.dataset.slide = match[2];
+        link.textContent = `(שקף ${match[2]})`;
+        item.appendChild(link);
     });
-
-    initQuiz();
-});
+}
 
 /* ============================================================
    חידון — בחירת תשובה, סימון נכון/שגוי, והצגת/הסתרת הסבר
@@ -121,6 +129,7 @@ function initQuiz() {
 
         if (showAnswerBtn) {
             showAnswerBtn.setAttribute('aria-expanded', 'false');
+            showAnswerBtn.addEventListener('click', (e) => toggleAnswer(showAnswerBtn, e));
         }
 
         options.forEach(option => {

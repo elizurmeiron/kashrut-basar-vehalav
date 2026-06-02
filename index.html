@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="מצגת על יסודות איסור בשר וחלב, תערובות, כלים, זמני המתנה ודיני סכנה">
     <title>כשרות: בשר וחלב</title>
 
     <link rel="stylesheet" href="css/variables.css">
@@ -26,7 +27,7 @@
         <div class="sidebar-footer">
             <div class="theme-selector">
                 <label class="theme-selector-label" for="theme-select">ערכת צבעים:</label>
-                <select id="theme-select" class="theme-select" onchange="changeTheme(this.value)"
+                <select id="theme-select" class="theme-select"
                     aria-label="בחירת ערכת צבעים">
                     <option value="warm">חם (טרקוטה)</option>
                     <option value="blue">כחול עמום</option>
@@ -38,9 +39,9 @@
             </div>
             <div class="mode-selector" role="radiogroup" aria-label="בחירת מצב תצוגה">
                 <div class="mode-toggle">
-                    <button class="mode-btn active" data-mode="light" onclick="changeMode('light')" role="radio"
+                    <button class="mode-btn" data-mode="light" role="radio"
                         aria-checked="true">☀️ בהיר</button>
-                    <button class="mode-btn" data-mode="dark" onclick="changeMode('dark')" role="radio"
+                    <button class="mode-btn" data-mode="dark" role="radio"
                         aria-checked="false">🌙 כהה</button>
                 </div>
             </div>
@@ -105,6 +106,7 @@
                     <strong>חלק ו: חזרה וסיכום</strong>
                     <div class="list-item">שאלות חזרה (שקף 20)</div>
                     <div class="list-item">סיכום עקרונות (שקף 21)</div>
+                    <div class="list-item">מקורות וקריאה נוספת (שקף 22)</div>
                 </div>
 
                 <div class="source-box">
@@ -304,7 +306,7 @@
                         כלי שבושל בו בשר אינו נעשה כלי פרווה בהדחה — הטעם הבלוע נשאר עד שיפלוט בחום.</p>
                     <p><strong>הדגמה:</strong> סיר בשרי ששטפו אותו היטב בסבון נראה נקי לחלוטין — אך טעם הבשר עדיין בלוע
                         בעומק דופנו. אם יבשלו בו מרק חלבי, יפלוט הסיר את טעם הבשר אל החלב. לפיכך כלי שבושל בו בשר אינו
-                        "מתפרווה" בהדחה, וצריך הכשרה כדי לשנות את דינו.</p>
+                        חוזר להיות פרווה על ידי הדחה, וצריך הכשרה כדי לשנות את דינו.</p>
                 </div>
                 <div class="source-box">
                     מקורות: שולחן ערוך יורה דעה צא–צה (בליעת טעם בכלים); הכלל "כבולעו כך פולטו" (פסחים ל, ב; עבודה זרה
@@ -521,7 +523,7 @@
                 <div class="definition-box">
                     <strong>המקור — דברי מר עוקבא:</strong>
                     <p>בגמרא (חולין קה, א) העיד מר עוקבא על עצמו:</p>
-                    <p style="font-style: italic;">"אֲנָא לְהָא מִילְּתָא חַלָּא בַּר חַמְרָא לְגַבֵּי אַבָּא; דְּאִילּוּ
+                    <p class="quote-text">"אֲנָא לְהָא מִילְּתָא חַלָּא בַּר חַמְרָא לְגַבֵּי אַבָּא; דְּאִילּוּ
                         אַבָּא — כִּי הֲוָה אָכֵיל בִּשְׂרָא הָאִידָּנָא, לָא הֲוָה אָכֵיל גְּבִינָה עַד לִמְחָר עַד
                         הַשְׁתָּא; וְאִילּוּ אֲנָא — בְּהָא סְעוּדְתָא הוּא דְּלָא אָכֵילְנָא, לִסְעוּדְתָא אַחֲרִיתָא
                         אָכֵילְנָא."</p>
@@ -869,204 +871,523 @@
             <h2>שאלות חזרה</h2>
             <div class="content">
 
-                <div class="question">
-                    <div class="question-text">1. מן התורה, מהו עיקר איסור בשר בחלב?</div>
-                    <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>לאכול בשר וחלב יחד אף בלא
-                                בישול</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>לבשל בשר בחלב יחד</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>להניח בשר וחלב על שולחן
-                                אחד</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>לאכול עוף בחלב</span></div>
-                    </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
-                    <div class="answer-box">
-                        <strong>תשובה נכונה: ב</strong>
-                        <p>הבישול הוא יסוד האיסור: בלא בישול אין כלל איסור תורה. בבשר בהמה שהתבשל בחלב אסורים מן התורה
-                            שלושה דברים — בישול, אכילה והנאה. ואילו אכילה בלא בישול, אכילה על שולחן אחד, ואיסור עוף בחלב —
-                            כולם מדברי חכמים.</p>
-                        <div class="source">מקור: פניני הלכה כשרות כה ה"א–ה"ב; שו"ע יו"ד פז, א–ג.</div>
-                    </div>
-                </div>
+                <h3>חלק א — יסודות האיסור</h3>
 
                 <div class="question">
-                    <div class="question-text">2. כמה שיטות־אם יש בזמן ההמתנה בין בשר לחלב, ועל מה הן מבוססות?</div>
+                    <div class="question-text">1. מהי הפעולה שאסרה התורה במפורש בבשר וחלב?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>שיטה אחת בלבד — שש שעות לכל
-                                הדעות</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>שלוש שיטות (שש, שלוש, שעה), ומקורן
-                                בפסוקים שונים</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>שלוש שיטות (שש, שלוש, שעה), כולן
-                                מבוססות על דברי מר עוקבא באותה גמרא</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>שתי שיטות — ספרדים
-                                ואשכנזים</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>לאכול בשר וחלב יחד בלא בישול</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>להעלות בשר וחלב על שולחן אחד</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>לבשל בשר בהמה בחלב</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>לאכול בשר עוף בחלב</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
                         <strong>תשובה נכונה: ג</strong>
-                        <p>שלוש השיטות (שש שעות, שלוש שעות, שעה אחת) נובעות כולן מפירוש דברי מר עוקבא (חולין קה, א) בשיעור
-                            "סעודה לסעודה". מנהג שש השעות הוא של רוב ישראל — ספרדים ורוב אשכנזים כאחד.</p>
-                        <div class="source">מקור: פניני הלכה כשרות כו ה"ב–ה"ג; שו"ע יו"ד פט, א.</div>
+                        <p>התורה אסרה במפורש לבשל בשר בהמה טהורה בחלב. מן הפסוק דרשו חכמים שלושה איסורי תורה — בישול, אכילה והנאה — וכולם דווקא בבשר בהמה. אכילת בשר וחלב בלא בישול, וכן בשר עוף או חיה בחלב, אסורים מדברי חכמים בלבד.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="3">למעבר לשקף 3 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד פז, א–ג; חולין קיג, א – קטו, ב; פניני הלכה כשרות פרק כה.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">3. אכל מרק צח שבושל בו בשר (בלא חתיכות בשר). מה דינו לעניין אכילת חלב?</div>
+                    <div class="question-text">2. שלושת חלקי האיסור — בישול, אכילה והנאה — נוהגים מן התורה דווקא ב:</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>מותר לאכול חלב מיד — אין בו
-                                בשר</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>צריך להמתין שש שעות — יש בו טעם
-                                בשר</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>צריך להמתין שלוש שעות
-                                בלבד</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>אסור לעולם לאכול אחריו
-                                חלב</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>בשר בהמה טהורה בלבד</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>בשר בהמה, חיה ועוף כאחד</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>בשר עוף ובשר חיה בלבד</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>בשר בהמה ובשר דגים</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
-                        <strong>תשובה נכונה: ב</strong>
-                        <p>מרק שבושל בו בשר יש בו <strong>טעם בשר</strong>, ולכן צריך להמתין שש שעות — בשונה ממאכל שהוא רק
-                            "בחזקת בשרי" בלא טעם, שאחריו אין צורך להמתין.</p>
-                        <div class="source">מקור: פניני הלכה כשרות כו ה"ה; רמ"א יו"ד פט, ג.</div>
+                        <strong>תשובה נכונה: א</strong>
+                        <p>מן המילה "גְּדִי", לשון מיעוט, דרשו: "גדי ולא חיה, גדי ולא עוף". לפיכך שלושת האיסורים נוהגים מן התורה רק בבשר בהמה טהורה (שור, כבש, עז). בשר חיה ובשר עוף אסורים בחלב מדברי חכמים, ובאכילה בלבד; ודגים אינם בכלל האיסור.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="3">למעבר לשקף 3 ←</a></div>
+                        <div class="source">מקור: חולין קיג, א – קטו, ב; שו"ע יו"ד פז, א–ג.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">4. נפלה טיפת חלב לסיר המכיל מרק בשרי רותח גדול פי מאה ממנה, ואין טעם חלב
-                        מורגש. מה הדין?</div>
+                    <div class="question-text">3. מדוע נקטה התורה לשון "בישול" ("לא תבשל") ולא לשון "אכילה"?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>המרק אסור — חלב ובשר התבשלו
-                                יחד</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>המרק מותר — החלב בטל בשישים, ואין
-                                טעם מורגש</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>המרק מותר רק בדיעבד אם כבר
-                                אכלו</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>צריך להוסיף עוד מרק עד פי
-                                מאתיים</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>ללמד שהאיסור הוא בבישול בלבד, והאכילה מותרת</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>משום שבימי קדם לא נאכל בשר אלא מבושל</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>ללמד שמותר לאכול, ובלבד שלא יבשל בעצמו</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>ללמד שאף האוכל עובר, כשם שהמבשל עובר</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
-                        <strong>תשובה נכונה: ב</strong>
-                        <p>כשיש פי שישים ויותר מן ההיתר כנגד האיסור, ואין טעם מורגש — האיסור בטל. ואולם אם היה טעם חלב
-                            מורגש בפועל, התערובת אסורה אף בשישים.</p>
-                        <div class="source">מקור: פניני הלכה כשרות לד; שו"ע יו"ד צח, ב; רמ"א שם, ח.</div>
+                        <strong>תשובה נכונה: ד</strong>
+                        <p>התורה הוציאה את איסור האכילה בלשון בישול ("אפקיה רחמנא לאכילה בלשון בישול"): כשם שהמבשל לוקה, כך האוכל לוקה. אף שהפסוק מדבר בבישול, האכילה אסורה אף היא מן התורה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="3">למעבר לשקף 3 ←</a></div>
+                        <div class="source">מקור: חולין קיד, א.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">5. האם הדחת כלי במים מסירה את הטעם הבלוע בדופנו?</div>
+                    <div class="question-text">4. שניים המכירים זה את זה — האם רשאים לאכול האחד בשר והאחר חלב על שולחן אחד?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>כן — הדחה מנקה את הכלי
-                                לגמרי</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>לא — הדחה מסירה רק את שכבת פני
-                                השטח, והטעם הבלוע נשאר עד שיפלוט בחום</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>רק במים חמים</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>רק בכלי מתכת</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>מותר בלא כל הגבלה</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אסור מדברי חכמים</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>אסור מן התורה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>אסור רק אם הם בני אותה משפחה</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
                         <strong>תשובה נכונה: ב</strong>
-                        <p>הדחה מסירה את השאריות שעל פני השטח בלבד. הטעם הבלוע בעומק הדופן נשאר, ויוצא רק בחום — "כבולעו כך
-                            פולטו". לכן כלי שבושל בו בשר אינו נעשה כלי פרווה בהדחה.</p>
-                        <div class="source">מקור: שו"ע יו"ד צא–צה (בליעת טעם בכלים).</div>
+                        <p>חכמים אסרו לשניים המכירים זה את זה לאכול בשר וחלב על שולחן אחד, שמא יבואו לאכול זה מזה. בדומה לכך אסרו לאפות פת שטעמהּ בשר או חלב.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="4">למעבר לשקף 4 ←</a></div>
+                        <div class="source">מקור: משנה חולין קד, ב; שו"ע יו"ד פח, א.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">6. מהו כלי "אינו בן יומו", ומדוע מקלים בו יותר?</div>
+                    <div class="question-text">5. נותרו שיירי תבשיל שנתבשל בו בשר בהמה בחלב. מה דינם לאדם ולכלב הבית?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>כלי שלא בושל בו דבר
-                                מעולם</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>כלי שבושל בו בשר לפני יותר ממעת
-                                לעת, והטעם הבלוע בו כבר נפגם</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>כלי חדש שלא הוטבל</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>כלי שנשבר ותוקן</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>אסור לאדם, אך מותר לתיתו לכלב</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אסור לאדם מן התורה, ולכלב מדברי חכמים</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>אסור לאדם ולכלב מן התורה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>אסור לאדם ולכלב מדברי חכמים בלבד</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong>
+                        <p>תערובת בשר בחלב שהתבשלה אסורה באכילה ובהנאה מן התורה. מאחר שבעל הבית חייב במזונות כלבו ונהנה מהאכלתו, נתינת התערובת לכלב היא הנאה מן האיסור — ואסורה כשם שאסורה לאדם.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="5">למעבר לשקף 5 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד פז, א; פניני הלכה כשרות פרק כה.</div>
+                    </div>
+                </div>
+
+                <h3>חלק ב — יסודות התערובת</h3>
+
+                <div class="question">
+                    <div class="question-text">6. ירק פרווה שבושל בסיר יחד עם נתח בשר וספג את טעמו, אך אין בו פירור בשר. האם מותר לאוכלו עם חלב?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>מותר — אין בו בשר ממש</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אסור — דינו כבשר</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>מותר, אלא אם טעם הבשר חזק מאוד</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>אסור אף לאוכלו בפני עצמו</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
                         <strong>תשובה נכונה: ב</strong>
-                        <p>"בן יומו" הוא כלי שבושל בו בתוך מעת לעת, שהטעם הבלוע בו עדיין טוב. לאחר מעת לעת הטעם נפגם, והכלי
-                            "אינו בן יומו" — ומאחר שנותן טעם לפגם אינו אוסר, יש בו מקום להקל.</p>
-                        <div class="source">מקור: שו"ע יו"ד קג (נותן טעם לפגם).</div>
+                        <p>טעם הבשר שנבלע בירק נחשב כבשר עצמו ("טעם כעיקר"): מאכל שאין בו אלא טעם בשר — דינו כבשר, ואסור לאוכלו עם חלב. עם זאת מותר לאוכלו בפני עצמו. כלל "טעם כעיקר" הוא היסוד לכל דיני התערובות.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="6">למעבר לשקף 6 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד צח, ב; פניני הלכה כשרות פרק לד.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">7. אורז פרווה שבושל בסיר בשרי נקי — מהו הכלל החל עליו?</div>
+                    <div class="question-text">7. תבשיל פרווה שספג טעם בשר ממש (כתפוחי אדמה שבושלו עם בשר). מה הדין לפני אכילת חלב?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>נעשה בשרי גמור, ואסור עם חלב לכל
-                                הדעות</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>נותן טעם בר נותן טעם — טעמו קלוש,
-                                ולכן יש מקום להקל; ואכילתו עם חלב תלויה במנהג העדה</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>אסור באכילה לגמרי</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>דינו כחלב</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>אין צורך להמתין כלל</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>די בהדחת הפה, בלא המתנה</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>צריך להמתין אחריו כדרך שממתין אחר בשר</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>מותר עם חלב, ובלבד שימתין שעה</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
-                        <strong>תשובה נכונה: ב</strong>
-                        <p>טעם הבשר עבר שני מעברים — מן הבשר אל הסיר, ומן הסיר אל האורז — ולכן הוא קלוש (נ"ט בר נ"ט). האורז
-                            אינו נעשה בשרי גמור, ואכילתו עם חלב תלויה במנהגי העדות (שקף 10).</p>
-                        <div class="source">מקור: שו"ע יו"ד צה, א–ב.</div>
+                        <strong>תשובה נכונה: ג</strong>
+                        <p>מאחר שבמאכל יש טעם בשר ממש, דינו כבשר לכל דבר: אסור לאוכלו עם חלב, וצריך להמתין אחריו לפני החלב כשם שממתין אחר בשר — כל אדם כמנהגו (רוב ישראל שש שעות, ויש הנוהגים שלוש או שעה). בכך הוא נבדל ממאכל פרווה שבושל בכלי בשרי נקי ואין בו טעם אלא "חזקת בשרי" בלבד — שאחריו אין צורך להמתין כלל (ראו שאלות 22–23).</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="14">למעבר לשקף 14 ←</a></div>
+                        <div class="source">מקור: רמ"א יו"ד פט, ג; פניני הלכה כשרות פרק כו.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">8. טיפת קיבת נבלה ששימשה להעמדת גבינה (להקפיאהּ) — האם בטלה בשישים?</div>
+                    <div class="question-text">8. בישלו מרק בשרי בסיר, שטפוהו, ולמחרת בישלו בו מרק ירקות — ויש בו טעם בשר. מדוע?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>כן — כל איסור בטל
-                                בשישים</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>לא — דבר המעמיד שאסור מצד עצמו אינו
-                                בטל אפילו באלף</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>בטלה רק אם אין טעם</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>תלוי במנהג העדה</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>הסיר בלע טעם בשר בחום, ופלט אותו בבישול החדש</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>שאריות בשר נותרו על דופן הסיר</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>כל מרק שמבשלים בסיר נעשה בשרי</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>ההדחה הוסיפה למרק טעם בשר</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong>
+                        <p>בשעת הבישול נבלע מעט מטעם הבשר בעומק דופן הסיר, ובבישול חם נוסף הוא נפלט אל המאכל — זהו הכלל "כבולעו כך פולטו" (כדרך שהכלי בלע בחום, כך הוא פולט בחום). מעבר זה תלוי בחום; במגע קר אין הטעם הבלוע יוצא.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="7">למעבר לשקף 7 ←</a></div>
+                        <div class="source">מקור: פסחים ל, ב; שו"ע יו"ד צא–צה.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">9. הניחו פרוסת גבינה קרה על צלחת בשרית קרה ונקייה. מה הדין?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>הגבינה אסורה, והצלחת צריכה הגעלה</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>הגבינה מותרת, והצלחת צריכה הדחה בלבד</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>הגבינה מותרת, אך הצלחת צריכה הגעלה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>הגבינה אסורה, והצלחת צריכה הדחה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
                         <strong>תשובה נכונה: ב</strong>
-                        <p>דבר המעמיד את המאכל ואסור מצד עצמו אינו בטל, שכן פעולתו ניכרת בעצם קיום המאכל. ואם היה שם גם
-                            מעמיד היתר — "זה וזה גורם", ובטל בשישים.</p>
+                        <p>במגע קר אין הטעם הבלוע יוצא מדופן הצלחת, ולכן הגבינה מותרת ודי בהדחת הצלחת. אילו הונחה הגבינה על צלחת רותחת — היה החום מפליט מעט מטעם הבשר אל הגבינה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="7">למעבר לשקף 7 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד צא; פניני הלכה כשרות פרק לב.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">10. מעט מאכל אסור התערב בכמות גדולה של מאכל מותר. מתי האיסור "בטל" ואינו אוסר את התערובת?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>לעולם אינו בטל, וכל התערובת נאסרת</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>כשיש פי שישים היתר כנגד האיסור, ואין טעם ניכר</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>רק כשהתערובת נתבשלה על האש</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>רק לדעת יוצאי ספרד, ולא לאשכנזים</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong>
+                        <p>כשנפל מעט איסור לתוך היתר מרובה ואין טעמו מורגש — האיסור "בטל" ואינו אוסר. השיעור המצוי הוא פי שישים מן ההיתר כנגד האיסור. אך אם טעם האיסור מורגש בפועל — אינו בטל אף בשישים.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="8">למעבר לשקף 8 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד צח, א; רמ"א שם, ח; פניני הלכה כשרות פרק לד.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">11. נפלה טיפת חלב לסיר המכיל מרק בשרי רותח גדול פי מאה ממנה, ואין טעם חלב מורגש. מה הדין?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>המרק מותר — החלב בטל</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>המרק אסור — אין ביטול בבשר בחלב</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>המרק מותר רק בדיעבד, אם כבר נאכל</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>צריך להוסיף מרק עד פי מאתיים כנגד הטיפה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong>
+                        <p>כשיש פי שישים ויותר מן ההיתר כנגד האיסור ואין טעם מורגש — האיסור בטל, וכאן יש פי מאה. אולם אם היה טעם חלב מורגש בפועל, התערובת אסורה אף בשישים.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="8">למעבר לשקף 8 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד צח, א; רמ"א שם, ח; פניני הלכה כשרות פרק לד.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">12. מעט קיבת נבלה ששימשה להעמדת גבינה (לגבשהּ) — האם בטלה בשישים?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>כן — כל איסור בטל בשישים</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>בטלה רק אם אין בה טעם הניכר בגבינה</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>תלוי במנהג העדה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>לא — דבר המעמיד אינו בטל אף באלף</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ד</strong>
+                        <p>דבר המעמיד את המאכל ואסור מצד עצמו (כקיבת נבלה המגבשת את החלב לגבינה) אינו בטל, שכן פעולתו ניכרת בעצם קיום המאכל — בלעדיה אין גבינה כלל. ואם היה לצדו גם מעמיד היתר — "זה וזה גורם", ובטל בשישים.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="8">למעבר לשקף 8 ←</a></div>
                         <div class="source">מקור: שו"ע ורמ"א יו"ד פז, יא.</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">9. מצד הדין, האם מותר כיום להגיש דג ובשר על צלחת אחת?</div>
+                    <div class="question-text">13. מהו כלי "אינו בן יומו", ומדוע מקילים בו יותר?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>אסור מן התורה</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>מצד הדין מותר (שאין סכנה כיום), אך
-                                נהגו להפריד, ובמקומות ציבוריים מקפידים על כלים נפרדים</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>מותר בלא שום מנהג</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>אסור משום בשר בחלב</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>כלי שלא בושל בו דבר מעולם</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>כלי חדש שעדיין לא הוטבל במקווה</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>כלי שלא בושל בו בשר או חלב במעת לעת האחרון (24 שעות)</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>כלי שנשבר ותוקן, ודינו כחדש</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
-                        <strong>תשובה נכונה: ב</strong>
-                        <p>החשש הוא סכנה, ומשהרפואה קובעת שאין בכך נזק, אין איסור מן הדין. אף על פי כן מנהג ישראל להפריד —
-                            אין מגישים על צלחת אחת, מנקים בין מין למין, ובהשגחה ציבורית מקפידים על כלים נפרדים.</p>
-                        <div class="source">מקור: שו"ע או"ח קטז, ב–ג; פניני הלכה כשרות לו ה"ד.</div>
+                        <strong>תשובה נכונה: ג</strong>
+                        <p>"בן יומו" הוא כלי שבושל בו בתוך מעת לעת, שהטעם הבלוע בו עדיין טוב ואוסר. לאחר מעת לעת הטעם נפגם, והכלי "אינו בן יומו"; ומאחר שטעם פגום אינו אוסר, יש בו מקום להקל.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="9">למעבר לשקף 9 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד קג (נותן טעם לפגם).</div>
                     </div>
                 </div>
 
                 <div class="question">
-                    <div class="question-text">10. קנה צ'יפס מחנות שווארמה (המוכרת גם בשר). האם מותר לאכול אחריו חלב, ומה
-                        עליו לברר?</div>
+                    <div class="question-text">14. שטפו סיר בשרי בן יומו בסבון כלים. האם הסבון "מכשיר" את הסיר ומוציא ממנו את טעם הבשר?</div>
                     <div class="options">
-                        <div class="option"><span class="option-letter">א</span><span>מותר תמיד — צ'יפס הוא
-                                פרווה</span></div>
-                        <div class="option"><span class="option-letter">ב</span><span>אסור תמיד — נמכר במקום
-                                בשרי</span></div>
-                        <div class="option"><span class="option-letter">ג</span><span>תלוי — יש לברר אם הוא מטוגן באותו
-                                שמן שבו מטגנים בשר; אם כן, יש בו טעם בשר וצריך להמתין</span></div>
-                        <div class="option"><span class="option-letter">ד</span><span>צריך להמתין שש שעות בכל
-                                מקרה</span></div>
+                        <div class="option"><span class="option-letter">א</span><span>כן — הסבון מוציא את הטעם, והסיר נעשה פרווה</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>לא — הסבון פוגם את הטעם במגע בלבד, ואינו מכשיר</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>הסבון אוסר את הסיר לגמרי</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>הסבון מכשיר רק כלי שאינו בן יומו</span></div>
                     </div>
-                    <button class="show-answer-btn" onclick="toggleAnswer(this, event)">הצג תשובה</button>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong>
+                        <p>הסיר נשאר בשרי גם לאחר השטיפה. פעולת הסבון היא בשעת המגע בלבד: כשטעם הבשר נפלט בעוד הסבון הפוגם מעורב עמו, הטעם העובר פגום ואינו אוסר — אך אין זו הכשרה, ולשינוי דין הכלי צריך הגעלה או ליבון. כלי זכוכית הם יוצא דופן: יוצאי ספרד נוהגים שזכוכית אינה בולעת, ולכן כלי זכוכית ששימש לבשר מותר לחלב לאחר הדחה יפה בסבון, בלא הגעלה (ראו שאלה 16).</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="9">למעבר לשקף 9 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד צה, ד; פניני הלכה כשרות פרק לב, פרק לג.</div>
+                    </div>
+                </div>
+
+                <h3>חלק ג — כלים ותערובת למעשה</h3>
+
+                <div class="question">
+                    <div class="question-text">15. האם מותר לכתחילה לבשל מאכל פרווה בסיר בשרי נקי כדי לאוכלו אחר כך עם חלב?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>ספרדים — מותר לכתחילה; אשכנזים — מותר בדיעבד</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>ספרדים — מותר בדיעבד; אשכנזים — אסור לגמרי</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>ספרדים — אסור; אשכנזים — מותר בדיעבד</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>ספרדים — מותר לכתחילה; אשכנזים — אסור אף בדיעבד</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong>
+                        <p>השולחן ערוך מתיר "נותן טעם בר נותן טעם" (טעם שעבר שני מעברים ונחלש) אף לכתחילה. הרמ"א מחמיר שלא ליצור זאת לכתחילה, אך בדיעבד מתיר; ואף הוא מודה שאם שני התבשילים לא נתבשלו יחד (כפרווה קר שעורבב עם חלב) — מותר לכתחילה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="10">למעבר לשקף 10 ←</a></div>
+                        <div class="source">מקור: שו"ע ורמ"א יו"ד צה, א–ב.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">16. כלי זכוכית ששימש לבשר חם — מה דינו לשימוש בחלב?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>מותר לכל הדעות</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אסור בחלב חם, ומותר בחלב קר</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>אסור לכל הדעות עד שיוכשר בהגעלה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>לספרדים מותר, ולאשכנזים אסור</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ד</strong>
+                        <p>נחלקו אם זכוכית בולעת: יוצאי ספרד נוהגים שאינה בולעת ומקלים בה (ולכן די בהדחה יפה), ויוצאי אשכנז מחמירים בה כבשאר כלים — וצריך הגעלה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="10">למעבר לשקף 10 ←</a></div>
+                        <div class="source">מקור: שו"ע ורמ"א יו"ד צה; פניני הלכה כשרות פרק לג.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">17. נשפך חלב רותח על נתח בשר צונן. מה דינו?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>הבשר כולו אסור באכילה</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>קולפים את שכבתו החיצונית, והשאר מותר</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>די להדיח את הבשר במים</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>הבשר כולו אסור אף בהנאה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong>
+                        <p>כשנפגשים חם וקר, התחתון גובר ("תתאה גבר" — התחתון). הבשר הקר שלמטה מצנן את החלב הרותח ומונע בישול לעומק, ולכן החום מבליע בשכבה דקה בלבד ודי בקליפתה. במקום שאי אפשר לקלוף (כבשר מתובל) — יש להחמיר.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="11">למעבר לשקף 11 ←</a></div>
+                        <div class="source">מקור: פסחים עו, א–ב; שו"ע יו"ד צא, ד.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">18. נפל חלב על חתיכת בשר רותחת ואין כנגדו שישים. מה דין החתיכה?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>נאסר רק מקום נפילת החלב, והשאר מותר</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>החתיכה מותרת לאחר הדחה במים</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>נאסרה החתיכה כולה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>תלוי במנהג העדה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
                     <div class="answer-box">
                         <strong>תשובה נכונה: ג</strong>
-                        <p>צ'יפס הוא פרווה, אך אם הוא מטוגן בשמן שבו מטגנים גם בשר (כשניצלים), בלע טעם בשר ממשי, ודינו
-                            כבשר — צריך להמתין שש שעות לפני חלב. אם הוא מטוגן בשמן נפרד, הוא פרווה ומותר. לכן יש לברר עם
-                            משגיח הכשרות כיצד הוכן.</p>
-                        <div class="source">מקור: אתר כושרות, דיני המתנה; שו"ע יו"ד פט, ג (תבשיל שיש בו טעם בשר).</div>
+                        <p>באין שישים נאסרת החתיכה כולה, ולא רק מקום נפילת החלב — "חתיכה נעשית נבילה". ואם נגעה אחר כך בחתיכות אחרות ונתנה בהן טעם באין שישים — אף הן נאסרות. בבשר בחלב נוהג דין זה לכל הדעות, שכן כל רכיב כשר בפני עצמו ורק צירופם אוסר.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="11">למעבר לשקף 11 ←</a></div>
+                        <div class="source">מקור: שו"ע יו"ד צב, ד; פניני הלכה כשרות פרק לד.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">19. כלי פלסטיק שבושל בו בשר — מה דינו לעניין בליעה?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>לא נתפרש בראשונים, ונחלקו בו הפוסקים</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>ודאי אינו בולע כלל, כדין זכוכית</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>ודאי בולע כחרס, ואין לו תקנה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>מותר לבשל בו בשר וחלב כאחד</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong>
+                        <p>דין הפלסטיק לא נתפרש בראשונים: יש המשווים אותו למתכת (בולע ונפלט בהגעלה) ויש המקילים. למעשה יש לברר לפי סוג הפלסטיק ועמידותו בחום.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="10">למעבר לשקף 10 ←</a></div>
+                        <div class="source">מקור: פניני הלכה כשרות פרק לג.</div>
+                    </div>
+                </div>
+
+                <h3>חלק ד — זמני ההמתנה</h3>
+
+                <div class="question">
+                    <div class="question-text">20. כמה שיטות עיקריות יש בזמן ההמתנה בין בשר לחלב, וממה הן נובעות?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>שיטה אחת — שש שעות לכל הדעות</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>שלוש שיטות, ומקורן בשלושה פסוקים שונים</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>שלוש שיטות (שש, שלוש, שעה) מאותו מקור</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>שתי שיטות — ספרדים שש ואשכנזים שעה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong>
+                        <p>שלוש השיטות (שש שעות, שלוש שעות, שעה) נובעות כולן מפירוש דברי מר עוקבא בשיעור "מסעודה לסעודה". מנהג שש השעות הוא של רוב ישראל — יוצאי ספרד ורוב יוצאי אשכנז כאחד.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="12">למעבר לשקף 12 ←</a></div>
+                        <div class="source">מקור: חולין קה, א; שו"ע ורמ"א יו"ד פט, א; פניני הלכה כשרות פרק כו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">21. אדם הנוהג שש שעות אכל בשר בתחילת הסעודה, אך המשיך לשבת אחריה. מאימתי מונה את השעות?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>מסיום אכילת הבשר עצמה</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>מסיום הסעודה כולה</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>מאמירת ברכת המזון</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>מתחילת הסעודה, אף קודם שאכל בשר</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong>
+                        <p>מונים את השעות מעת אכילת הבשר, ולא מסיום הסעודה. מי שאכל בשר בתחילת הסעודה מונה משם, אף שהמשיך לשבת לאחר מכן.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="13">למעבר לשקף 13 ←</a></div>
+                        <div class="source">מקור: דגול מרבבה יו"ד פט, א; פניני הלכה כשרות פרק כו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">22. מאכל פרווה שבושל בסיר בשרי נקי שאינו בן יומו (ואין בו טעם בשר אלא "חזקת בשרי" בלבד) — האם מותר לאוכלו יחד עם חלב?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>מותר לכל העדות בלא הסתייגות</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אסור לכל העדות</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>ספרדים — מותר מיד; אשכנזים — צריך להמתין שש שעות</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>תלוי במנהג העדה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ד</strong>
+                        <p>מאחר שאין בו טעם בשר אלא "חזקת בשרי" בלבד, אכילתו יחד עם חלב היא אותה מחלוקת שבמאכל פרווה שבושל בכלי בשרי: יוצאי ספרד מקילים (ובפרט בכלי שאינו בן יומו), ויוצאי אשכנז מחמירים לכתחילה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="14">למעבר לשקף 14 ←</a></div>
+                        <div class="source">מקור: רמ"א יו"ד פט, ג; פניני הלכה כשרות פרק כו, פרק לב.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">23. מאכל פרווה שבושל בסיר בשרי נקי שאינו בן יומו ("חזקת בשרי" בלבד) — כמה צריך להמתין אחריו לפני אכילת חלב?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>שש שעות, כדין בשר גמור</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אין צורך להמתין כלל</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>שלוש שעות</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>שעה אחת</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong>
+                        <p>מאחר שאין במאכל טעם בשר אלא "חזקת בשרי" בלבד, אין צורך להמתין אחריו כלל; ומיד לאחר סיומו מותר לאכול חלב. (אכילתו יחד עם חלב — תלויה במנהג העדה.)</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="14">למעבר לשקף 14 ←</a></div>
+                        <div class="source">מקור: רמ"א יו"ד פט, ג; פניני הלכה כשרות פרק כו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">24. סיים לאכול מאכל חלבי רגיל ומבקש לאכול בשר. מה עליו לעשות?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>להמתין אחריו כדרך שממתינים אחר בשר</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>להמתין שעה אחת בדיוק</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>אשכנזים ממתינים שעות, וספרדים מדיחים בלבד</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>לקנח את פיו ולהדיחו, בלא המתנת שעות</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ד</strong>
+                        <p>הכיוון מחלב לבשר קל יותר: די בקינוח הפה (כלעיסת פת), בהדחתו ובבדיקת הידיים, בלא המתנת שעות. נוסף על כך נהגו רבים, על פי הזוהר, להמתין חצי שעה כמידת חסידות — וההמתנה אינה פוטרת מן הקינוח.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="15">למעבר לשקף 15 ←</a></div>
+                        <div class="source">מקור: שו"ע ורמ"א יו"ד פט, ב; ש"ך שם, טז; פניני הלכה כשרות פרק כו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">25. נהוג להמתין אחר גבינה קשה לפני בשר. אצל מי נהג מנהג זה, ומה תוקפו?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>אצל כלל ישראל, וחובה מן התורה</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אצל יוצאי אשכנז, ומעיקרו רשות ולא חובה</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>אצל יוצאי ספרד, ומעיקרו רשות</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>אצל יוצאי אשכנז, וחובה גמורה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong>
+                        <p>מנהג ההמתנה אחר גבינה קשה נהג באשכנז בלבד, ובארצות המזרח לא נהגו בו. לדעת רוב הפוסקים אין חובה להמתין אחריה יותר מאחר גבינה רגילה, והמהדר ימתין שעה; ויש מן האשכנזים ומן הספרדים שהחמירו שש שעות אחר גבינה צהובה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="15">למעבר לשקף 15 ←</a></div>
+                        <div class="source">מקור: רמ"א יו"ד פט, ב; בן איש חי שלח; ילקוט יוסף יו"ד פט; פניני הלכה כשרות פרק כו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">26. אישה ממוצא אשכנזי שנישאה לבעל ספרדי — כמנהג מי תנהג בזמן ההמתנה בביתה?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>כמנהג בית אביה, לעולם</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>כחומרת שני המנהגים יחד</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>כמנהג בעלה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>כמנהג הרוב במקום מגוריהם</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong>
+                        <p>האישה נוהגת כמנהג בעלה בענייני הבית, ובכלל זה זמן ההמתנה, שכן היא נכנסת לרשותו ולמנהגיו. בבית הוריה רשאית להמשיך במנהג בית אביה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="13">למעבר לשקף 13 ←</a></div>
+                        <div class="source">מקור: שו"ע ורמ"א יו"ד פט, א; הליכות עולם (הרב עובדיה יוסף); פניני הלכה כשרות פרק כו.</div>
+                    </div>
+                </div>
+
+                <h3>חלק ה — דג ודיני סכנה</h3>
+
+                <div class="question">
+                    <div class="question-text">27. מהו הכלל "חמירא סכנתא מאיסורא", וכיצד הוא בא לידי ביטוי?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>בספק איסור מקילים, ובספק סכנה מחמירים</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>בסכנה מקילים לפי שיקול דעת, ובאיסור לא</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>סכנה ואיסור שווים בכל דבר</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>בימינו בטלו כל דיני הסכנה</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: א</strong>
+                        <p>בדברים שיש בהם סכנה החמירו חכמים יותר מבאיסורים, ולכן אין מקילים בהם בספקות ובביטול. עם זאת, מאחר שיסוד החשש הוא הנזק, יש סוברים שכאשר מתברר שהנזק חדל ("נשתנו הטבעים") — בטל החשש; ובסכנה רוחנית רבים מן המקובלים סוברים שאינה בטלה.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="16">למעבר לשקף 16 ←</a></div>
+                        <div class="source">מקור: חולין י, א; שו"ע יו"ד קטז; פניני הלכה כשרות פרק לו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">28. מצד הדין, האם מותר כיום להגיש דג ובשר על צלחת אחת?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>אסור מן התורה</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>אסור מדברי חכמים משום בשר בחלב</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>לספרדים אסור, ולאשכנזים מותר</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>מצד הדין מותר, אך נהגו להפריד</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ד</strong>
+                        <p>החשש הוא חשש סכנה, ומשקובעת הרפואה שאין בכך נזק — אין איסור מן הדין. אף על פי כן מנהג ישראל להפריד: אין מגישים על צלחת אחת, מנקים בין מין למין, ובהשגחה ציבורית מקפידים על כלים נפרדים. יוצאי ספרד והנוהגים על פי הקבלה מקפידים בזה יותר.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="17">למעבר לשקף 17 ←</a></div>
+                        <div class="source">מקור: פסחים עו, ב; שו"ע יו"ד קטז, ב; פניני הלכה כשרות פרק לו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">29. אכילת דג עם חלב — מהו מנהג העדות?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>אסור לכל העדות מן התורה משום בשר בחלב</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>ספרדים נמנעים; אשכנזים אוכלים בלא חשש</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>אסור לכל העדות מדברי חכמים משום סכנה</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>ספרדים אוכלים בלא חשש; אשכנזים נמנעים</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ב</strong>
+                        <p>דגים אינם בכלל איסור בשר בחלב, והשולחן ערוך לא הזכיר בהם איסור. למעשה יוצאי אשכנז אוכלים דג בחלב בלא חשש, ואילו ילקוט יוסף מורה לספרדים ולעדות המזרח להימנע משום חשש סכנה — אך מתיר טיגון בחמאה, ובדיעבד אינו אוסר.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="18">למעבר לשקף 18 ←</a></div>
+                        <div class="source">מקור: משנה חולין קג, ב; בית יוסף יו"ד פז, ג; ש"ך שם; ילקוט יוסף; פניני הלכה כשרות פרק לו.</div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <div class="question-text">30. האם מותר לאכול סלט ביצים שעבר עליו הלילה (ובו ביצים שנקלפו)?</div>
+                    <div class="options">
+                        <div class="option"><span class="option-letter">א</span><span>אסור — ביצה קלופה שעבר עליה הלילה אסורה תמיד</span></div>
+                        <div class="option"><span class="option-letter">ב</span><span>ספרדים — אסור; אשכנזים — מותר</span></div>
+                        <div class="option"><span class="option-letter">ג</span><span>מותר — שכן עורבבה במאכל אחר</span></div>
+                        <div class="option"><span class="option-letter">ד</span><span>ספרדים — מותר; אשכנזים — אסור</span></div>
+                    </div>
+                    <button class="show-answer-btn">הצג תשובה</button>
+                    <div class="answer-box">
+                        <strong>תשובה נכונה: ג</strong>
+                        <p>על שום, בצל וביצה שנקלפו לגמרי ועבר עליהם הלילה אמרו ששורה עליהם רוח רעה. אך כשעורבבו במאכל אחר (כביצה בסלט), או נתבלו בשמן, מלח או חומץ — אין רוח רעה שורה עליהם, ומותרים. בדינים אלו הפסיקה מסויגת, והנוהגים על פי הקבלה מחמירים.</p>
+                        <div class="slide-ref"><a class="slide-link" href="#" data-slide="19">למעבר לשקף 19 ←</a></div>
+                        <div class="source">מקור: נידה יז, א; שו"ע יו"ד קטז; פניני הלכה כשרות פרק לו.</div>
                     </div>
                 </div>
 
@@ -1077,45 +1398,109 @@
         <div class="slide">
             <h2>סיכום — עקרונות מרכזיים</h2>
             <div class="content">
+
                 <div class="definition-box">
-                    <strong>1. שלושה חלקים לאיסור:</strong>
-                    <p>בבשר בהמה — בישול, אכילה והנאה, כולם מן התורה. בעוף ובחיה — רק אכילה, ומדברי חכמים. איסור האכלת
-                        בעלי חיים נכלל באיסור ההנאה.</p>
+                    <strong>1. שלושה חלקי האיסור (חלק א):</strong>
+                    <p>בבשר בהמה טהורה שהתבשל בחלב נאסרים מן התורה שלושה דברים: בישולו, אכילתו וההנאה ממנו — והבישול
+                        הוא יסוד האיסור. בבשר חיה ובבשר עוף נאסרה האכילה בלבד, ומדברי חכמים, ואילו דגים אינם בכלל האיסור.
+                        איסור ההנאה כולל אף האכלת בעלי חיים שאדם חייב במזונותם, שכן הוא נהנה מפרנסתם.</p>
                 </div>
+
                 <div class="example-box">
-                    <strong>2. יסודות התערובת (המנוע של כל הדינים):</strong>
-                    <p>טעם כעיקר — הטעם נחשב כעצם הדבר; הטעם נבלע ונפלט בחום ("כבולעו כך פולטו"), והדחה מסירה רק את פני
-                        השטח. הטעם אינו אוסר בשני אופנים: לפי כמות (ביטול ברוב ובשישים — מלבד מעמיד, מלח ותבלין), ולפי
-                        איכות (טעם פגום, כלי שאינו בן יומו, נ"ט בר נ"ט).</p>
+                    <strong>2. יסודות התערובת (חלק ב):</strong>
+                    <p>הטעם נחשב כעצם הדבר ("טעם כעיקר"), ולכן מאכל שבלע טעם בשר או חלב דינו כמותו. הטעם נבלע ונפלט בחום
+                        ("כבולעו כך פולטו"), ואילו ההדחה מסירה את פני השטח בלבד. שני אופנים שבהם אין הטעם אוסר: לפי כמותו —
+                        בביטול ברוב בתערובת יבשה ובשישים בתערובת לחה (מלבד דבר המעמיד, המלח והתבלין, שאינם בטלים); ולפי
+                        איכותו — כשהוא פגום, כשהכלי אינו בן יומו, או כשעבר שני מעברים ונחלש ("נותן טעם בר נותן טעם").</p>
                 </div>
+
                 <div class="warning-box">
-                    <strong>3. תערובת בשר בחלב למעשה:</strong>
-                    <p>טיפה בטלה בשישים; באין שישים — חתיכה נעשית נבילה, ובבשר בחלב לכל הדעות. בשאר איסורים — מחלוקת: ספרדים
-                        (שו"ע) אין חנ"נ, אשכנזים (רמ"א) יש. מעמיד אינו בטל אפילו באלף.</p>
+                    <strong>3. תערובת בשר בחלב למעשה (חלק ג):</strong>
+                    <p>טיפת איסור שנפלה לתוך פי שישים מן ההיתר בטלה, כל עוד אין טעמה מורגש. חלב רותח שנשפך על בשר צונן —
+                        קולפים את שכבתו החיצונית בלבד ("כדי קליפה"), שכן התחתון הקר גובר ומונע בישול לעומק ("תתאה גבר").
+                        באין שישים נאסרת החתיכה כולה ("חתיכה נעשית נבילה"); בבשר בחלב נוהג דין זה לכל הדעות, ואילו בשאר
+                        איסורים נחלקו בו יוצאי ספרד (המקילים) ויוצאי אשכנז (המחמירים). דבר המעמיד את המאכל אינו בטל אפילו
+                        באלף.</p>
                 </div>
+
                 <div class="positive-box">
-                    <strong>4. כלים ופרווה:</strong>
-                    <p>כלי בולע את טעם מה שבושל בו ונעשה בשרי או חלבי. מאכל פרווה שבושל בכלי בשרי נקי נשאר היתר (נ"ט בר
-                        נ"ט); בכלים מודרניים נקיים מקלים בני כל העדות.</p>
+                    <strong>4. כלים ופרווה (חלק ג):</strong>
+                    <p>כלי בולע את טעם המאכל שבושל בו ונעשה בשרי או חלבי, ואינו חוזר להיות פרווה אלא בהגעלה או בליבון — ולא
+                        בהדחה בלבד. מאכל פרווה שבושל בכלי בשרי נקי נשאר מותר, מפני שטעמו קלוש ("נותן טעם בר נותן טעם"):
+                        השולחן ערוך מתיר זאת אף לכתחילה, והרמ"א מחמיר לכתחילה ומתיר בדיעבד. בכלי מתכת וזכוכית נקיים נוטים
+                        רבים להקל לבני כל העדות.</p>
                 </div>
+
                 <div class="warning-box">
-                    <strong>5. זמני המתנה וחזקות:</strong>
-                    <p>בשר ← חלב: שלוש שיטות (שש / שלוש / שעה), ומנהג רוב ישראל שש שעות. טעם בשר ממשי ← שש שעות; חזקת בשרי
-                        בלבד ← אין המתנה, ואכילה עם חלב תלויה במנהג העדה. הכיוון ההפוך (חלב ← בשר) קל יותר — קינוח והדחה
-                        בלא שעות; גבינה קשה — מחלוקת.</p>
+                    <strong>5. זמני המתנה וחזקות (חלק ד):</strong>
+                    <p>בין אכילת בשר לאכילת חלב נאמרו שלוש שיטות — שש שעות, שלוש שעות ושעה אחת — ומנהג רוב ישראל להמתין שש
+                        שעות, הנמנות מעת אכילת הבשר. מאכל שיש בו טעם בשר ממשי דינו כבשר ומצריך המתנה, ואילו מאכל שהוא
+                        "בחזקת בשרי" בלבד אינו מצריך המתנה כלל, ואכילתו עם חלב תלויה במנהג העדה. הכיוון ההפוך — אכילת בשר
+                        אחר חלב — קל יותר, ודי בקינוח הפה ובהדחתו בלא המתנת שעות, ויש שנהגו להמתין חצי שעה על פי הזוהר. אחר
+                        גבינה קשה נהגו באשכנז להמתין, מנהג מדורג שלא נתקבל בכל העדות.</p>
                 </div>
+
                 <div class="warning-box">
-                    <strong>6. דיני סכנה (חמירא סכנתא, ולא איסור):</strong>
-                    <p>דג עם בשר — מן הדין מותר כיום, ונהגו להפריד; דג עם חלב — מותר ביסודו, ויש ספרדים מחמירים; גילוי
-                        וקלופים — פסיקה מסויגת, והנוהגים על פי הקבלה מחמירים אף בימינו.</p>
+                    <strong>6. דיני סכנה — חמירא סכנתא, ולא איסור (חלק ה):</strong>
+                    <p>דברים אלו נאסרו משום חשש נזק, ובהם החמירו חכמים יותר מבאיסורים ("חמירא סכנתא"). אכילת דג עם בשר
+                        מותרת כיום מעיקר הדין, ובכל זאת נהגו להפרידם. אכילת דג עם חלב מותרת ביסודה, ויש מן הספרדים שמחמירים
+                        בה. בדיני גילוי המשקים, מאכלים קלופים, ואוכל שהונח תחת המיטה או בשירותים — הפסיקה מסויגת: משבטל
+                        הטעם שהזהירו מפניו רבים אינם חוששים, ואילו הנוהגים על פי הקבלה מחמירים אף בימינו.</p>
                 </div>
+
                 <div class="source-box">
-                    <strong>עיקרון:</strong> מחלוקות אינן הלכה פסוקה. בכל ספק למעשה — יש לשאול מורה הוראה.
+                    <strong>עיקרון מנחה:</strong> מחלוקות הפוסקים אינן הלכה פסוקה. בכל ספק למעשה — יש לשאול מורה הוראה.
                 </div>
+
+            </div>
+        </div>
+
+        <!-- שקף 22 -->
+        <div class="slide">
+            <h2>מקורות וקריאה נוספת</h2>
+            <div class="content">
+
+                <div class="definition-box">
+                    <strong>ספרי היסוד שעליהם נשענת המצגת:</strong>
+                    <p><span class="condition-number">•</span> <strong>שולחן ערוך ונושאי כליו</strong> (רמ"א, ש"ך, ט"ז,
+                        פרי חדש, כף החיים) — יורה דעה פז–צז (בשר בחלב), צח (ביטול וטעם כעיקר), קג (נותן טעם לפגם), קטז
+                        (דברים האסורים משום סכנה); אורח חיים קעג (דג ובשר).</p>
+                    <p><span class="condition-number">•</span> <strong>פניני הלכה — כשרות</strong> (הרב אליעזר מלמד) —
+                        פרקים כה–כו (בשר בחלב וזמני המתנה), לב–לה (כלים ותערובות), לו (דג ודיני סכנה). זמין במלואו באתר
+                        פניני הלכה.</p>
+                    <p><span class="condition-number">•</span> <strong>ילקוט יוסף</strong> (הרב יצחק יוסף) — חלק איסור
+                        והיתר; ולצדו פסקי הרב עובדיה יוסף ב"הליכות עולם" וב"יחוה דעת".</p>
+                    <p><span class="condition-number">•</span> <strong>ואכלת ושבעת</strong> (הרב אלישיב קנוהל) — מבוא נגיש
+                        להלכות כשרות.</p>
+                </div>
+
+                <div class="example-box">
+                    <strong>מקורות התלמוד והמדרש:</strong>
+                    <p>הדרשות על "לא תבשל גדי" ושלושת חלקי האיסור — חולין קיג, א – קטו, ב; "אפקיה רחמנא לאכילה בלשון
+                        בישול" — חולין קיד, א; משנת "כל הבשר" — חולין קג, ב – קד, ב; דברי מר עוקבא בזמני ההמתנה — חולין
+                        קה, א; "כבולעו כך פולטו" ו"תתאה גבר" — פסחים ל, ב; עו, א–ב; "חמירא סכנתא מאיסורא" — חולין י, א;
+                        רוח רעה על קלופים ועל אוכל תחת המיטה — נידה יז, א; פסחים קיב, א.</p>
+                </div>
+
+                <div class="definition-box">
+                    <strong>לפי נושאים:</strong>
+                    <p><span class="condition-number">א</span> <strong>יסודות האיסור:</strong> שו"ע יו"ד פז–פח;
+                        פניני הלכה כשרות כה; בעניין האכלת בעלי חיים — ילקוט יוסף איסור והיתר ג.</p>
+                    <p><span class="condition-number">ב</span> <strong>תערובת, ביטול וכלים:</strong> שו"ע יו"ד צא–צה
+                        (כלים ונ"ט בר נ"ט), צח (ביטול וטעם כעיקר), קג (נותן טעם לפגם), קט (יבש ביבש), פז, יא (מעמיד);
+                        פניני הלכה כשרות לב–לה.</p>
+                    <p><span class="condition-number">ג</span> <strong>זמני המתנה:</strong> שו"ע ורמ"א יו"ד פט; דגול
+                        מרבבה שם (מאימתי מונים); פניני הלכה כשרות כו; ילקוט יוסף יו"ד פט.</p>
+                    <p><span class="condition-number">ד</span> <strong>דג ודיני סכנה:</strong> שו"ע יו"ד קטז; שו"ע ורמ"א
+                        או"ח קעג (דג ובשר); בית יוסף יו"ד פז, ג, וש"ך שם (דג וחלב); פניני הלכה כשרות לו; שו"ת דבר חברון
+                        (הרב דב ליאור).</p>
+                </div>
+
                 <div class="source-box">
-                    מקורות עיקריים: שולחן ערוך ונושאי כליו, פניני הלכה כשרות (מלמד), ילקוט יוסף (הרב יצחק יוסף), "ואכלת
-                    ושבעת" (קנוהל), בהשלמה מאתר כושרות.
+                    <strong>להעמקה:</strong> פניני הלכה כשרות (להבנה רחבה ובהירה של הסוגיות), שולחן ערוך עם נושאי כליו
+                    (למקור ההלכה ולפרטיה), וילקוט יוסף (לפסיקת בני עדות המזרח). בכל שאלה למעשה — יש לפנות למורה הוראה.
                 </div>
+
             </div>
         </div>
 
@@ -1124,14 +1509,15 @@
 
     <!-- פס ניווט תחתון קבוע — תמיד גלוי -->
     <nav class="navigation-controls" aria-label="ניווט בין שקפים">
-        <button class="nav-btn" onclick="previousSlide()" id="prev-btn" aria-label="שקף קודם">▶ קודם</button>
+        <button class="nav-btn" id="prev-btn" aria-label="שקף קודם">▶ קודם</button>
         <div class="slide-counter">
             <span id="current-slide" aria-live="polite" aria-atomic="true">1</span>
             /
             <span id="total-slides">1</span>
         </div>
-        <button class="nav-btn" onclick="nextSlide()" id="next-btn" aria-label="שקף הבא">הבא ◀</button>
+        <button class="nav-btn" id="next-btn" aria-label="שקף הבא">הבא ◀</button>
     </nav>
+
 
     <!-- קבצי JS — סדר טעינה חשוב -->
     <script src="js/navigation.js"></script>

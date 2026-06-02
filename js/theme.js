@@ -4,7 +4,6 @@
    ניהול ערכת צבעים ומצב תצוגה (בהיר/כהה)
    ============================================================ */
 
-// ברירת המחדל החדשה: ערכת "warm" (טרקוטה+זהב+זית)
 const savedTheme = localStorage.getItem('theme') || 'warm';
 const savedMode = localStorage.getItem('mode') || 'light';
 
@@ -13,9 +12,16 @@ document.documentElement.setAttribute('data-mode', savedMode);
 
 document.addEventListener('DOMContentLoaded', () => {
     const themeSelect = document.getElementById('theme-select');
-    if (themeSelect) themeSelect.value = savedTheme;
+    if (themeSelect) {
+        themeSelect.value = savedTheme;
+        themeSelect.addEventListener('change', () => changeTheme(themeSelect.value));
+    }
 
-    document.querySelector(`.mode-btn[data-mode="${savedMode}"]`)?.classList.add('active');
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.addEventListener('click', () => changeMode(btn.dataset.mode));
+    });
+
+    syncModeButtons(savedMode);
 });
 
 /**
@@ -34,15 +40,36 @@ function changeTheme(theme) {
 function changeMode(mode) {
     document.documentElement.setAttribute('data-mode', mode);
     localStorage.setItem('mode', mode);
-
-    document.querySelectorAll('.mode-btn').forEach(btn => {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-checked', 'false');
-    });
-
-    const activeBtn = document.querySelector(`.mode-btn[data-mode="${mode}"]`);
-    if (activeBtn) {
-        activeBtn.classList.add('active');
-        activeBtn.setAttribute('aria-checked', 'true');
-    }
+    syncModeButtons(mode);
 }
+
+function syncModeButtons(mode) {
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+        const isActive = btn.dataset.mode === mode;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-checked', String(isActive));
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    const radiogroup = e.target.closest('[role="radiogroup"]');
+    if (!radiogroup || !radiogroup.querySelector('.mode-btn')) return;
+
+    const buttons = [...radiogroup.querySelectorAll('.mode-btn')];
+    const currentIndex = buttons.findIndex(btn => btn.classList.contains('active'));
+    if (currentIndex === -1) return;
+
+    let nextIndex = -1;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+        nextIndex = (currentIndex + 1) % buttons.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+        nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+    }
+
+    if (nextIndex !== -1) {
+        e.preventDefault();
+        e.stopPropagation();
+        changeMode(buttons[nextIndex].dataset.mode);
+        buttons[nextIndex].focus();
+    }
+});
